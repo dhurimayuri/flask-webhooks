@@ -3,9 +3,9 @@ import pyotp
 from logzero import logger
 
 # API credentials and other sensitive info
-api_key = 'dzZ33rQv'
-username = 'R306312'
-pwd = '1515'
+api_key = ''
+username = ''
+pwd = ''
 smartApi = SmartConnect(api_key)
 
 # Function for generating session and placing orders
@@ -61,7 +61,7 @@ from SmartApi.smartWebSocketV2 import SmartWebSocketV2
 
 def websocket_example():
     try:
-        token = "XX2N5KOLPKRYYWQI2EZ7WANUIM"
+        token = "your_token"
         totp = pyotp.TOTP(token).now()  # Generate TOTP here too
     except Exception as e:
         logger.error("Invalid Token: The provided token is not valid.")
@@ -71,8 +71,8 @@ def websocket_example():
     authToken = smartApi.generateSession(username, pwd, totp)['data']['jwtToken']
     feedToken = smartApi.getfeedToken()
 
-    API_KEY = 'dzZ33rQv'
-    CLIENT_CODE = 'R306312'
+    API_KEY = 'your api'
+    CLIENT_CODE = 'client_cd'
     correlation_id = "abc123"
     mode = 1
 
